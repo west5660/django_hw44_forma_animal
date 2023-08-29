@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Форма для страницы</title>
+    <link rel="stylesheet" href="{% static 'css/style3.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Заполните информацию о животном</h1>
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="{{ form.name.id_for_label }}">Имя животного</label>
+                {{ form.name }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.poroda.id_for_label }}">Порода</label>
+                {{ form.poroda }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.age.id_for_label }}">Дата рождения</label>
+                {{ form.age }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.color.id_for_label }}">Цвет основной</label>
+                {{ form.color }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.color1.id_for_label }}">Вторичный окрас</label>
+                {{ form.color1 }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.food.id_for_label }}">Любимая еда</label>
+                {{ form.food }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.email.id_for_label }}">Почта</label>
+                {{ form.email }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.clas.id_for_label }}">Выберите класс животного</label>
+                {{ form.clas }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.name1.id_for_label }}">Подпись фото</label>
+                {{ form.name1 }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.img.id_for_label }}">Загрузите фото</label>
+                {{ form.img }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.robo.id_for_label }}">Вы не робот?</label>
+                {{ form.robo }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.dannie.id_for_label }}">Согласие на обработку и хранение данных</label>
+                {{ form.dannie }}
+            </div>
+            <button type="submit">Отправить</button>
+        </form>
+    </div>
+</body>
+</html>
